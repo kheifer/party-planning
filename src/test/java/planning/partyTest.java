@@ -20,8 +20,8 @@ public class partyTest {
     }
     @Test
     public void newParty_calculateBeverageCost_3() {
-        Party testParty = new Party(10, "dj", "snack", "water", true);
-        assertEquals(40, testParty.calculateBeverageCost());
+        Party testParty = new Party(10, "dj", "snack", "Beer/wine", true);
+        assertEquals(200, testParty.calculateBeverageCost());
     }
 
 

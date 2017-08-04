@@ -28,7 +28,13 @@ public class Party {
         return totalCost;
     }
     public int calculateBeverageCost(){
-
+        String[] beverageChoices = {"Water", "Non-Alcoholic", "Beer/Wine", "One Signature Drink", "Full Bar", "Full Bar with servers"};
+        int[] beveragePrices = {0, 5, 20, 30, 45, 60};
+        for (int i = 0; i <beverageChoices.length ; i++) {
+            if(typeOfBeverages.equalsIgnoreCase(beverageChoices[i])){
+                beverageCost = beveragePrices[i]*numOfGests;
+            }
+        }
         return beverageCost;
     }
     public int calculateFoodCost(){
