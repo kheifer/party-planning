@@ -38,9 +38,23 @@ public class Party {
         return beverageCost;
     }
     public int calculateFoodCost(){
+        String[] foodOptions = {"snack", "family style", "food stations", "buffet", "brunch", "dinner"};
+        int[] foodPrices = {10, 15, 20, 30, 20, 60};
+        for (int j = 0; j <foodOptions.length ; j++) {
+            if (typeOfFood.equalsIgnoreCase(foodOptions[j])) {
+                foodCost = foodPrices[j] * numOfGests;
+            }
+        }
         return foodCost;
     }
     public int calculateMusicCost(){
+        String[] musicOptions = {"none", "equipment only", "dj", "band"};
+        int[] musicPrices = {0, 100, 350, 500};
+        for (int k = 0; k < musicOptions.length ; k++) {
+            if (typeOfMusic.equalsIgnoreCase(musicOptions[k])) {
+                musicCost = musicPrices[k];
+            }
+        }
         return musicCost;
     }
 

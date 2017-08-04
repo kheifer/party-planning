@@ -16,12 +16,12 @@ public class partyTest {
     @Test
     public void newParty_calculateCost_2() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
-        assertEquals(0, testParty.calculateTotalCost());
+        assertEquals(450, testParty.calculateTotalCost());
     }
     @Test
-    public void newParty_calculateBeverageCost_3() {
+    public void newParty_calculatepartyOptionCost_3() {
         Party testParty = new Party(10, "dj", "snack", "Beer/wine", true);
-        assertEquals(200, testParty.calculateBeverageCost());
+        assertEquals(350, testParty.calculateMusicCost());
     }
 
 
