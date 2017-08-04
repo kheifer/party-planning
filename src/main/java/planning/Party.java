@@ -23,14 +23,23 @@ public class Party {
         typeOfBeverages = beverages;
         decorations = decor;
     }
+    //options and corresponding prices
+    private String[] foodOptions = {"none","snack", "family style", "food stations", "buffet", "brunch", "dinner"};
+    private String[] beverageChoices = {"Water", "Non-Alcoholic", "Beer/Wine", "One Signature Drink", "Full Bar", "Full Bar with servers"};
+    private String[] musicOptions = {"none", "equipment only", "dj", "band"};
+    private String[] discountOptions = {" none", "yelp", "first time", "newsletter"};
+    private int[] foodPrices = {0, 10, 15, 20, 30, 20, 60};
+    private int[] beveragePrices = {0, 5, 20, 30, 45, 60};
+    private int[] musicPrices = {0, 100, 350, 500};
+
+
+
     //Cost Calculators
     public int calculateTotalCost(){
         totalCost = calculateBeverageCost()+calculateFoodCost()+calculateMusicCost()+calculateDecorationCost();
         return totalCost;
     }
     public int calculateBeverageCost(){
-        String[] beverageChoices = {"Water", "Non-Alcoholic", "Beer/Wine", "One Signature Drink", "Full Bar", "Full Bar with servers"};
-        int[] beveragePrices = {0, 5, 20, 30, 45, 60};
         for (int i = 0; i <beverageChoices.length ; i++) {
             if(typeOfBeverages.equalsIgnoreCase(beverageChoices[i])){
                 beverageCost = beveragePrices[i]*numOfGuests;
@@ -39,8 +48,6 @@ public class Party {
         return beverageCost;
     }
     public int calculateFoodCost(){
-        String[] foodOptions = {"none","snack", "family style", "food stations", "buffet", "brunch", "dinner"};
-        int[] foodPrices = {0, 10, 15, 20, 30, 20, 60};
         for (int j = 0; j <foodOptions.length ; j++) {
             if (typeOfFood.equalsIgnoreCase(foodOptions[j])) {
                 foodCost = foodPrices[j] * numOfGuests;
@@ -49,8 +56,6 @@ public class Party {
         return foodCost;
     }
     public int calculateMusicCost(){
-        String[] musicOptions = {"none", "equipment only", "dj", "band"};
-        int[] musicPrices = {0, 100, 350, 500};
         for (int k = 0; k < musicOptions.length ; k++) {
             if (typeOfMusic.equalsIgnoreCase(musicOptions[k])) {
                 musicCost = musicPrices[k];
@@ -65,13 +70,15 @@ public class Party {
         return decorationCost;
     }
     public int discountedPrice(String discount){
-        String[] discountOptions = {" none", "yelp", "first time", "newsletter"};
-        for (int k = 0; k < discountOptions.length ; k++) {
-            if (discount.equalsIgnoreCase(discountOptions[k])) {
-                discountedPrice = (int)(totalCost*(80.0f/100.0f));
+        for (String discountOption : discountOptions) {
+            if (discount.equalsIgnoreCase(discountOption)) {
+                discountedPrice = (int) (totalCost * (80.0 / 100.0f));
             }
         }
         return discountedPrice;
+    }
+    public boolean isAnOption(String input,String[] list){
+
     }
 
 
@@ -94,6 +101,21 @@ public class Party {
 
     public boolean iDecorations() {
         return decorations;
+    }
+    public String[] getFoodOptions() {
+        return foodOptions;
+    }
+
+    public String[] getBeverageChoices() {
+        return beverageChoices;
+    }
+
+    public String[] getMusicOptions() {
+        return musicOptions;
+    }
+
+    public String[] getDiscountOptions() {
+        return discountOptions;
     }
 
 }

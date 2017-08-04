@@ -1,4 +1,3 @@
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 import planning.Party;
 
 import java.io.BufferedReader;
@@ -21,10 +20,16 @@ public class App {
                     System.out.println("Great! Let's begin!");
                     System.out.println("##########################################################");
                 } else if (answer.equalsIgnoreCase("no")) {
-                    programRunning = false;
                     System.out.println("Thanks for visiting! We hope to see you again!");
                     System.out.println("##########################################################");
+                    break;
+                }else{
+                    System.out.println("We didn't recognize that input! We hope to see you again!");
+                    System.out.println("##########################################################");
+                    break;
                 }
+
+
                 System.out.println("##########################################################");
                 System.out.println("How many guests do you plan on hosting? At current, we're only able to host up to 1000 guests and our minium is 10");
                 int guests = Integer.parseInt(bufferedReader.readLine());
@@ -32,7 +37,7 @@ public class App {
                     System.out.println("We won't be able to accomodate that many people, Have a great day!");
                     System.out.println("##########################################################");
                     programRunning = false;
-                } else {
+                } else if(guests<1000 && guests > 10){
                     System.out.println("Magnificent! You'd like us to provide the decorations, right?(true or false)");
                     boolean decor = Boolean.parseBoolean(bufferedReader.readLine());
                     String decorations;
@@ -83,7 +88,7 @@ public class App {
                     System.out.println("Please enter one of the following: none, yelp, first time, newsletter");
                     String discount = bufferedReader.readLine();
                     System.out.println("Here's your new discounted price: "+ newParty.discountedPrice(discount));
-
+                    programRunning = false;
                 }
 
             }

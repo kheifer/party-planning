@@ -21,15 +21,21 @@ public class partyTest {
     @Test
     public void newParty_calculateCost_3() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
-        assertEquals(800, testParty.calculateTotalCost());
+        assertEquals(950, testParty.calculateTotalCost());
     }
     @Test
     public void newParty_discountedCost_3() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
         testParty.calculateTotalCost();
+        System.out.println(testParty.calculateTotalCost());
         String discount = "yelp";
-        assertEquals(640, testParty.discountedPrice(discount));
+        assertEquals(760, testParty.discountedPrice(discount));
     }
+    public void newParty_checkifuserinputinarraylist_4() {
+        Party testParty = new Party(10, "dj", "snack", "water", true);
+        testParty.calculateTotalCost();
+        String discount = "yelper";
+        assertEquals(true, testParty.isAnOption(discount, testParty.getDiscountOptions()));
 
 
 
