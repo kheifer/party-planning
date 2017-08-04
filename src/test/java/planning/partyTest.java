@@ -31,12 +31,12 @@ public class partyTest {
         String discount = "yelp";
         assertEquals(760, testParty.discountedPrice(discount));
     }
+    @Test
     public void newParty_checkifuserinputinarraylist_4() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
         testParty.calculateTotalCost();
-        String discount = "yelper";
-        assertEquals(true, testParty.isAnOption(discount, testParty.getDiscountOptions()));
-
-
-
+        String discount = "yelp";
+        String[] options = testParty.getDiscountOptions();
+        assertEquals(true, testParty.isAnOption(discount,options));
+    }
 }

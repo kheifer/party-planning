@@ -1,6 +1,8 @@
 package planning;
 
 
+import java.util.Arrays;
+
 public class Party {
     //private encapsulated values
     private int numOfGuests;
@@ -27,7 +29,7 @@ public class Party {
     private String[] foodOptions = {"none","snack", "family style", "food stations", "buffet", "brunch", "dinner"};
     private String[] beverageChoices = {"Water", "Non-Alcoholic", "Beer/Wine", "One Signature Drink", "Full Bar", "Full Bar with servers"};
     private String[] musicOptions = {"none", "equipment only", "dj", "band"};
-    private String[] discountOptions = {" none", "yelp", "first time", "newsletter"};
+    private String[] discountOptions = {"none", "yelp", "first time", "newsletter"};
     private int[] foodPrices = {0, 10, 15, 20, 30, 20, 60};
     private int[] beveragePrices = {0, 5, 20, 30, 45, 60};
     private int[] musicPrices = {0, 100, 350, 500};
@@ -78,7 +80,7 @@ public class Party {
         return discountedPrice;
     }
     public boolean isAnOption(String input,String[] list){
-
+        return (Arrays.asList(list).contains(input));
     }
 
 
