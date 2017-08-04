@@ -83,6 +83,7 @@ public class App {
                     System.out.println("Please enter one of the following: none, yelp, first time, newsletter");
                     String discount = bufferedReader.readLine();
                     System.out.println("Here's your new discounted price: "+ newParty.discountedPrice(discount));
+
                 }
 
             }

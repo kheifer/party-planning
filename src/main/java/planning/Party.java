@@ -8,7 +8,6 @@ public class Party {
     private String typeOfFood;
     private String typeOfBeverages;
     private boolean decorations;
-    private int price;
     private int beverageCost;
     private int foodCost;
     private int musicCost;
@@ -63,7 +62,7 @@ public class Party {
         if(decorations){
           decorationCost = 50*numOfGuests;
         }
-        return musicCost;
+        return decorationCost;
     }
     public int discountedPrice(String discount){
         String[] discountOptions = {" none", "yelp", "first time", "newsletter"};
