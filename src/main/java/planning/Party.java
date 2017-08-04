@@ -14,6 +14,7 @@ public class Party {
     private int musicCost;
     private int totalCost;
     private int decorationCost;
+    private int discountedPrice;
 
     //inputs needed to calculate cost
     public Party(int guests, String music, String food, String beverages,boolean decor ){
@@ -63,6 +64,15 @@ public class Party {
           decorationCost = 50*numOfGuests;
         }
         return musicCost;
+    }
+    public int discountedPrice(String discount){
+        String[] discountOptions = {" none", "yelp", "first time", "newsletter"};
+        for (int k = 0; k < discountOptions.length ; k++) {
+            if (discount.equalsIgnoreCase(discountOptions[k])) {
+                discountedPrice = (int)(totalCost*(80.0f/100.0f));
+            }
+        }
+        return discountedPrice;
     }
 
 

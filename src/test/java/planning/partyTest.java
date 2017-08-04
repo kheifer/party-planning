@@ -23,7 +23,13 @@ public class partyTest {
         Party testParty = new Party(10, "dj", "snack", "water", true);
         assertEquals(800, testParty.calculateTotalCost());
     }
-
+    @Test
+    public void newParty_discountedCost_3() {
+        Party testParty = new Party(10, "dj", "snack", "water", true);
+        testParty.calculateTotalCost();
+        String discount = "yelp";
+        assertEquals(800, testParty.discountedPrice(discount));
+    }
 
 
 

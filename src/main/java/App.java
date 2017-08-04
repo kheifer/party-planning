@@ -77,6 +77,12 @@ public class App {
                     System.out.println("Your estimated Food cost is: "+ newParty.calculateFoodCost());
                     System.out.println("Your estimated Beverage cost is: "+ newParty.calculateBeverageCost());
                     System.out.println("Your estimated total cost is: "+ newParty.calculateTotalCost());
+                    System.out.println("##########################################################");
+                    System.out.println("We do offer discounts.");
+                    System.out.println("We have a yelp discount(10% off), a first time visitor discount(10% off), and we also offere a discount for those who join our newsletter(10% off)");
+                    System.out.println("Please enter one of the following: none, yelp, first time, newsletter");
+                    String discount = bufferedReader.readLine();
+                    System.out.println("Here's your new discounted price: "+ newParty.discountedPrice(discount));
                 }
 
             }
