@@ -13,6 +13,7 @@ public class Party {
     private int foodCost;
     private int musicCost;
     private int totalCost;
+    private int decorationCost;
 
     //inputs needed to calculate cost
     public Party(int guests, String music, String food, String beverages,boolean decor ){
@@ -20,11 +21,11 @@ public class Party {
         typeOfMusic = music;
         typeOfFood = food;
         typeOfBeverages = beverages;
-        decorations= decor;
+        decorations = decor;
     }
     //Cost Calculators
     public int calculateTotalCost(){
-        totalCost = calculateBeverageCost()+calculateFoodCost()+calculateMusicCost();
+        totalCost = calculateBeverageCost()+calculateFoodCost()+calculateMusicCost()+calculateDecorationCost();
         return totalCost;
     }
     public int calculateBeverageCost(){
@@ -54,6 +55,12 @@ public class Party {
             if (typeOfMusic.equalsIgnoreCase(musicOptions[k])) {
                 musicCost = musicPrices[k];
             }
+        }
+        return musicCost;
+    }
+    public int calculateDecorationCost(){
+        if(decorations){
+          decorationCost = 50*numOfGests;
         }
         return musicCost;
     }
