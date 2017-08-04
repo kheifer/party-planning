@@ -14,15 +14,16 @@ public class partyTest {
         assertEquals(true, testParty instanceof Party);
     }
     @Test
-    public void newParty_calculateCost_2() {
-        Party testParty = new Party(10, "dj", "snack", "water", true);
-        assertEquals(800, testParty.calculateTotalCost());
-    }
-    @Test
     public void newParty_calculatepartyOptionCost_3() {
         Party testParty = new Party(10, "dj", "snack", "Beer/wine", true);
         assertEquals(350, testParty.calculateMusicCost());
     }
+    @Test
+    public void newParty_calculateCost_3() {
+        Party testParty = new Party(10, "dj", "snack", "water", true);
+        assertEquals(800, testParty.calculateTotalCost());
+    }
+
 
 
 

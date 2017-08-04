@@ -3,7 +3,7 @@ package planning;
 
 public class Party {
     //private encapsulated values
-    private int numOfGests;
+    private int numOfGuests;
     private String typeOfMusic;
     private String typeOfFood;
     private String typeOfBeverages;
@@ -17,7 +17,7 @@ public class Party {
 
     //inputs needed to calculate cost
     public Party(int guests, String music, String food, String beverages,boolean decor ){
-        numOfGests = guests;
+        numOfGuests = guests;
         typeOfMusic = music;
         typeOfFood = food;
         typeOfBeverages = beverages;
@@ -33,17 +33,17 @@ public class Party {
         int[] beveragePrices = {0, 5, 20, 30, 45, 60};
         for (int i = 0; i <beverageChoices.length ; i++) {
             if(typeOfBeverages.equalsIgnoreCase(beverageChoices[i])){
-                beverageCost = beveragePrices[i]*numOfGests;
+                beverageCost = beveragePrices[i]*numOfGuests;
             }
         }
         return beverageCost;
     }
     public int calculateFoodCost(){
-        String[] foodOptions = {"snack", "family style", "food stations", "buffet", "brunch", "dinner"};
-        int[] foodPrices = {10, 15, 20, 30, 20, 60};
+        String[] foodOptions = {"none","snack", "family style", "food stations", "buffet", "brunch", "dinner"};
+        int[] foodPrices = {0, 10, 15, 20, 30, 20, 60};
         for (int j = 0; j <foodOptions.length ; j++) {
             if (typeOfFood.equalsIgnoreCase(foodOptions[j])) {
-                foodCost = foodPrices[j] * numOfGests;
+                foodCost = foodPrices[j] * numOfGuests;
             }
         }
         return foodCost;
@@ -60,15 +60,15 @@ public class Party {
     }
     public int calculateDecorationCost(){
         if(decorations){
-          decorationCost = 50*numOfGests;
+          decorationCost = 50*numOfGuests;
         }
         return musicCost;
     }
 
 
     //GETTERS
-    public int getNumOfGests() {
-        return numOfGests;
+    public int getNumOfGuests() {
+        return numOfGuests;
     }
 
     public String getTypeOfMusic() {
