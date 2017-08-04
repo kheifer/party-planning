@@ -16,5 +16,20 @@ public class Party {
         typeOfFood = food;
         typeOfBeverages = beverages;
     }
+    public int getNumOfGests() {
+        return numOfGests;
+    }
+
+    public String getTypeOfMusic() {
+        return typeOfMusic;
+    }
+
+    public String getTypeOfFood() {
+        return typeOfFood;
+    }
+
+    public String getTypeOfBeverages() {
+        return typeOfBeverages;
+    }
 
 }
