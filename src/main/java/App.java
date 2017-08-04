@@ -55,7 +55,7 @@ public class App {
                     String music = bufferedReader.readLine().toLowerCase();
                     System.out.println("##########################################################");
                     System.out.println("Great! Now let's pick the drinks! Here are our options. Please pick one!");
-                    System.out.println("Water, Non-Alcoholic, Beer/Wine, Signature Drink, Full Bar, Full Bar with servers");
+                    System.out.println("Water, Non-Alcoholic, Beer/Wine, Signature Drink, Full Bar, bottle service");
                     String beverages = bufferedReader.readLine().toLowerCase();
                     Party newParty = new Party(guests,  music,  food,  beverages, decor );
                     if (!newParty.isAnOption(food,newParty.getFoodOptions())){
@@ -79,13 +79,12 @@ public class App {
                     System.out.println("Oh and before I forget, you also chose to "+ decorations + "decorations");
                     System.out.println("Does this all seem correct?(yes or no)");
                     System.out.println("##########################################################");
-                    String choicesCorrect = bufferedReader.readLine();
-                    if(choicesCorrect.equalsIgnoreCase("yes")){
-                        programRunning = true;
+                    Boolean choicesCorrect = Boolean.parseBoolean(bufferedReader.readLine());
+                    if(choicesCorrect){
                         System.out.println("Great here's your total");
                     }else{
                         System.out.println("I guess there must have been some miscommunication please try again!");
-                        programRunning = false;
+                        break;
                     }
                     System.out.println("Your estimated decor cost is: "+ newParty.calculateDecorationCost());
                     System.out.println("Your estimated Music cost is: "+ newParty.calculateMusicCost());
@@ -98,6 +97,7 @@ public class App {
                     System.out.println("Please enter one of the following: none, yelp, first time, newsletter");
                     String discount = bufferedReader.readLine();
                     System.out.println("Here's your new discounted price: "+ newParty.discountedPrice(discount));
+                    System.out.println("We;ll be in touch to gather your credit card information!");
                     programRunning = false;
                 }
 

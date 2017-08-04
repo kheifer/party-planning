@@ -28,7 +28,7 @@ public class Party {
 
     //options and corresponding prices
     private String[] foodOptions = {"none","snack", "family style", "food stations", "buffet", "brunch", "dinner"};
-    private String[] beverageChoices = {"Water", "Non-Alcoholic", "Beer/Wine", "signature drink", "Full Bar", "Full Bar with servers"};
+    private String[] beverageChoices = {"Water", "Non-Alcoholic", "Beer/Wine", "signature drink", "Full Bar", "bottle service"};
     private String[] musicOptions = {"none", "equipment only", "dj", "band"};
     private String[] discountOptions = {"none", "yelp", "first time", "newsletter"};
     private int[] foodPrices = {0, 10, 15, 20, 30, 20, 60};
