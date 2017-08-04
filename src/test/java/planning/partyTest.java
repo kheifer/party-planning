@@ -16,7 +16,7 @@ public class partyTest {
     @Test
     public void newParty_calculateCost_2() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
-        assertEquals(true, testParty.calculateTotalCost());
+        assertEquals(0, testParty.calculateTotalCost());
     }
 
 

@@ -24,6 +24,7 @@ public class Party {
     }
     //Cost Calculators
     public int calculateTotalCost(){
+        totalCost = calculateBeverageCost()+calculateFoodCost()+calculateMusicCost();
         return totalCost;
     }
     public int calculateBeverageCost(){
