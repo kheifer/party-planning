@@ -1,9 +1,8 @@
 package planning;
 
-/**
- * Created by Guest on 8/4/17.
- */
+
 public class Party {
+    //private encapsulated values
     private int numOfGests;
     private String typeOfMusic;
     private String typeOfFood;
@@ -15,7 +14,7 @@ public class Party {
     private int musicCost;
     private int totalCost;
 
-
+    //inputs needed to calculate cost
     public Party(int guests, String music, String food, String beverages,boolean decor ){
         numOfGests = guests;
         typeOfMusic = music;
@@ -23,6 +22,20 @@ public class Party {
         typeOfBeverages = beverages;
         decorations= decor;
     }
+    //Cost Calculators
+    public int calculateTotalCost(){
+        return totalCost;
+    }
+    public int calculateBeverageCost(){
+        return beverageCost;
+    }
+    public int calculateFoodCost(){
+        return foodCost;
+    }
+    public int calculateMusicCost(){
+        return musicCost;
+    }
+
 
     //GETTERS
     public int getNumOfGests() {
@@ -41,7 +54,7 @@ public class Party {
         return typeOfBeverages;
     }
 
-    public boolean isDecorations() {
+    public boolean iDecorations() {
         return decorations;
     }
 
