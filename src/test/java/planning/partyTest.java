@@ -19,12 +19,12 @@ public class partyTest {
         assertEquals(350, testParty.calculateMusicCost());
     }
     @Test
-    public void newParty_calculateCost_3() {
+    public void newParty_calculateTotalCost_3() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
         assertEquals(950, testParty.calculateTotalCost());
     }
     @Test
-    public void newParty_discountedCost_3() {
+    public void newParty_calculateDiscountedCost_3() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
         testParty.calculateTotalCost();
         System.out.println(testParty.calculateTotalCost());
@@ -32,7 +32,7 @@ public class partyTest {
         assertEquals(760, testParty.discountedPrice(discount));
     }
     @Test
-    public void newParty_checkifuserinputinarraylist_4() {
+    public void newParty_checkIfUserInputInArraylist_4() {
         Party testParty = new Party(10, "dj", "snack", "water", true);
         testParty.calculateTotalCost();
         String discount = "yelp";

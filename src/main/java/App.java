@@ -55,7 +55,7 @@ public class App {
                     String music = bufferedReader.readLine().toLowerCase();
                     System.out.println("##########################################################");
                     System.out.println("Great! Now let's pick the drinks! Here are our options. Please pick one!");
-                    System.out.println("Water, Non-Alcoholic, Beer/Wine, One Signature Drink, Full Bar, Full Bar with servers");
+                    System.out.println("Water, Non-Alcoholic, Beer/Wine, Signature Drink, Full Bar, Full Bar with servers");
                     String beverages = bufferedReader.readLine().toLowerCase();
                     Party newParty = new Party(guests,  music,  food,  beverages, decor );
                     if (!newParty.isAnOption(food,newParty.getFoodOptions())){
