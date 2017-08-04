@@ -28,6 +28,7 @@ public class Party {
         return totalCost;
     }
     public int calculateBeverageCost(){
+
         return beverageCost;
     }
     public int calculateFoodCost(){

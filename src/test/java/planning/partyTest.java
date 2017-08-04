@@ -18,6 +18,12 @@ public class partyTest {
         Party testParty = new Party(10, "dj", "snack", "water", true);
         assertEquals(0, testParty.calculateTotalCost());
     }
+    @Test
+    public void newParty_calculateBeverageCost_3() {
+        Party testParty = new Party(10, "dj", "snack", "water", true);
+        assertEquals(40, testParty.calculateBeverageCost());
+    }
+
 
 
 }
