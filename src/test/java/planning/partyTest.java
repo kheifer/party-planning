@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class partyTest {
     @Test
     public void newParty_instantiatesCorrectly() {
-        Party testParty = new Party(10, "snack", "water");
+        Party testParty = new Party(10, "dj", "snack", "water");
         assertEquals(true, testParty instanceof Party);
     }
 

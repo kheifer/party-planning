@@ -5,7 +5,8 @@ package planning;
  */
 public class Party {
 
-    public Party(){
+
+    public Party(int guests, String music, String food, String beverages ){
 
     }
 
