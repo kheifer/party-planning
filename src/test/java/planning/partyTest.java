@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  */
 public class partyTest {
     @Test
-    public void newParty_instantiatesCorrectly() {
+    public void newParty_instantiatesCorrectly_1() {
         Party testParty = new Party(10, "dj", "snack", "water");
         assertEquals(true, testParty instanceof Party);
     }
