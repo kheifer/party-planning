@@ -47,16 +47,26 @@ public class App {
                     System.out.println("##########################################################");
                     System.out.println("Delightful! Now as for food! Here are our options. Please pick one!");
                     System.out.println("none, snack, family style, food stations, buffet, brunch, dinner");
-                    String food = bufferedReader.readLine();
+                    String food = bufferedReader.readLine().toLowerCase();
+
                     System.out.println("##########################################################");
                     System.out.println("Excellent choice! Now we all know no party is complete without music! Here are our options. Please pick one!");
                     System.out.println("none, equipment only, dj, band");
-                    String music = bufferedReader.readLine();
+                    String music = bufferedReader.readLine().toLowerCase();
                     System.out.println("##########################################################");
                     System.out.println("Great! Now let's pick the drinks! Here are our options. Please pick one!");
                     System.out.println("Water, Non-Alcoholic, Beer/Wine, One Signature Drink, Full Bar, Full Bar with servers");
-                    String beverages = bufferedReader.readLine();
+                    String beverages = bufferedReader.readLine().toLowerCase();
                     Party newParty = new Party(guests,  music,  food,  beverages, decor );
+                    if (!newParty.isAnOption(food,newParty.getFoodOptions())){
+                        System.out.println("We didn't recognize your food choice! We hope to see you again!");
+                        break;}
+                    if (!newParty.isAnOption(music,newParty.getMusicOptions())){
+                        System.out.println("We didn't recognize your Music choice! We hope to see you again!");
+                        break;}
+                    if (!newParty.isAnOption(beverages,newParty.getBeverageChoices())){
+                        System.out.println("We didn't recognize that Beverage choice! We hope to see you again!");
+                        break;}
                     System.out.println("##########################################################");
                     System.out.println("This is shaping up to be a great party!");
                     System.out.println("We're going to go ahead and calculate your choices!");
