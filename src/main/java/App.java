@@ -31,19 +31,52 @@ public class App {
                 if (guests > 1000 || guests < 10) {
                     System.out.println("We won't be able to accomodate that many people, Have a great day!");
                     System.out.println("##########################################################");
+                    programRunning = false;
                 } else {
-                    System.out.println("Great! You'd like us to provide the decorations, right?(true or false)");
-                    boolean party = Boolean.parseBoolean(bufferedReader.readLine());
+                    System.out.println("Magnificent! You'd like us to provide the decorations, right?(true or false)");
+                    boolean decor = Boolean.parseBoolean(bufferedReader.readLine());
+                    String decorations;
+                    if(decor){decorations ="have us do ";
+                    }else {decorations = "provide your own ";
+                    }
                     System.out.println("##########################################################");
-                    System.out.println("Great! Now as for food! Here are our options. Please pick one!");
+                    System.out.println("Delightful! Now as for food! Here are our options. Please pick one!");
                     System.out.println("none, snack, family style, food stations, buffet, brunch, dinner");
                     String food = bufferedReader.readLine();
                     System.out.println("##########################################################");
-                    System.out.println("Great! Now we all know no party is complete without music! Here are our options. Please pick one!");
+                    System.out.println("Excellent choice! Now we all know no party is complete without music! Here are our options. Please pick one!");
                     System.out.println("none, equipment only, dj, band");
                     String music = bufferedReader.readLine();
-
-//                Party newParty = new Party(guests; String music; String food; String beverages; decor );
+                    System.out.println("##########################################################");
+                    System.out.println("Great! Now let's pick the drinks! Here are our options. Please pick one!");
+                    System.out.println("Water, Non-Alcoholic, Beer/Wine, One Signature Drink, Full Bar, Full Bar with servers");
+                    String beverages = bufferedReader.readLine();
+                    Party newParty = new Party(guests,  music,  food,  beverages, decor );
+                    System.out.println("##########################################################");
+                    System.out.println("This is shaping up to be a great party!");
+                    System.out.println("We're going to go ahead and calculate your choices!");
+                    System.out.println("But before we do let's make sure we've got your choices all set.");
+                    System.out.println("##########################################################");
+                    System.out.println("Your soiree will have hopefully "+ newParty.getNumOfGuests()+" guests");
+                    System.out.println("You meticulously chose "+ newParty.getTypeOfBeverages()+" to keep them satiated!");
+                    System.out.println("You artfully picked "+ newParty.getTypeOfFood()+" to delight all "+newParty.getNumOfGuests()+" palates");
+                    System.out.println("For musical entertainment you've chosen to have " + newParty.getTypeOfMusic());
+                    System.out.println("Oh and before I forget, you also chose to "+ decorations + "decorations");
+                    System.out.println("Does this all seem correct?(yes or no)");
+                    System.out.println("##########################################################");
+                    String choicesCorrect = bufferedReader.readLine();
+                    if(choicesCorrect.equalsIgnoreCase("yes")){
+                        programRunning = true;
+                        System.out.println("Great here's your total");
+                    }else{
+                        System.out.println("I guess there must have been some miscommunication please try again!");
+                        programRunning = false;
+                    }
+                    System.out.println("Your estimated decor cost is: "+ newParty.calculateDecorationCost());
+                    System.out.println("Your estimated Music cost is: "+ newParty.calculateMusicCost());
+                    System.out.println("Your estimated Food cost is: "+ newParty.calculateFoodCost());
+                    System.out.println("Your estimated Beverage cost is: "+ newParty.calculateBeverageCost());
+                    System.out.println("Your estimated total cost is: "+ newParty.calculateTotalCost());
                 }
 
             }
