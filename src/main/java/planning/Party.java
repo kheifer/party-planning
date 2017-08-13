@@ -28,12 +28,12 @@ public class Party {
 
     //options and corresponding prices
     private String[] foodOptions = {"none","snack", "family style", "food stations", "buffet", "brunch", "dinner"};
-    private String[] beverageChoices = {"Water", "Non-Alcoholic", "Beer/Wine", "signature drink", "Full Bar", "bottle service"};
+    private String[] beverageChoices = {"water", "non-alcoholic", "beer/wine", "signature drink", "full bar", "bottle service"};
     private String[] musicOptions = {"none", "equipment only", "dj", "band"};
     private String[] discountOptions = {"none", "yelp", "first time", "newsletter"};
     private int[] foodPrices = {0, 10, 15, 20, 30, 20, 60};
     private int[] beveragePrices = {0, 5, 20, 30, 45, 60};
-    private int[] musicPrices = {0, 100, 350, 500};
+    private int[] musicPrices = {0git remote add kf , 100, 350, 500};
 
 
 

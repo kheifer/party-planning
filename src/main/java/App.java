@@ -57,6 +57,8 @@ public class App {
                     System.out.println("Great! Now let's pick the drinks! Here are our options. Please pick one!");
                     System.out.println("Water, Non-Alcoholic, Beer/Wine, Signature Drink, Full Bar, bottle service");
                     String beverages = bufferedReader.readLine().toLowerCase();
+
+
                     Party newParty = new Party(guests,  music,  food,  beverages, decor );
                     if (!newParty.isAnOption(food,newParty.getFoodOptions())){
                         System.out.println("We didn't recognize your food choice! We hope to see you again!");
