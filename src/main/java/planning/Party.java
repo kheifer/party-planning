@@ -33,7 +33,7 @@ public class Party {
     private String[] discountOptions = {"none", "yelp", "first time", "newsletter"};
     private int[] foodPrices = {0, 10, 15, 20, 30, 20, 60};
     private int[] beveragePrices = {0, 5, 20, 30, 45, 60};
-    private int[] musicPrices = {0git remote add kf , 100, 350, 500};
+    private int[] musicPrices = {0, 100, 350, 500};
 
 
 
